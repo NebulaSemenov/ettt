@@ -25,15 +25,5 @@ jobs:
     - name: Set Local User Credentials
       run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!" -Force)
 
-    - name: Start Localtunnel
-      run: |
-        Start-Process "lt" -ArgumentList "--port", "3389", "--subdomain", "allahutealacellehu" -PassThru
-
-    - name: Get Tunnel Password
-      run: |
-        # Use curl to get the tunnel password from the public IP
-        $password = curl https://loca.lt/mytunnelpassword
-        Write-Output "Tunnel Password: $password"
-    
-    - name: Wait for Localtunnel to be available
-      run: Start-Sleep -Seconds 10
+    - name: Create Localtunnel
+      run: lt --port 3389 --subdomain aaaaaaaaaaaaalllah
