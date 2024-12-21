@@ -26,4 +26,5 @@ jobs:
       run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!" -Force)
 
     - name: Create Localtunnel
-      run: lt --port 3389 --subdomain aaaaaaaaaaaaalllah
+      run: |
+        Start-Process "lt" -ArgumentList "--port", "3389", "--subdomain", "auuusemenov" -PassThru
