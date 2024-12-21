@@ -27,8 +27,7 @@ jobs:
 
     - name: Start Localtunnel
       run: |
-        $lt_process = Start-Process lt --port 3389 --subdomain allahutealacellehu -PassThru
-        Start-Sleep -Seconds 5  # Give it a moment to set up
+        Start-Process "lt" -ArgumentList "--port", "3389", "--subdomain", "allahutealacellehu" -PassThru
 
     - name: Get Tunnel Password
       run: |
